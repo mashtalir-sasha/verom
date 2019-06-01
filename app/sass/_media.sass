@@ -9,33 +9,481 @@
 
 //Large: ≥1200px  max-width: 1439px
 +media-breakpoint-down(lg)
+	.nav
+		&-list
+			&__item
+				font-size: 14px
+				margin-right: 10px
+		&-phone
+			font-size: 14px
+		&-lang
+			&__link
+				min-height: 33px
+				min-width: 33px
+				line-height: 33px
+				font-size: 14px
+	.head
+		margin-top: -50px
+		&-ttl
+			font-size: 28px
+	.clients
+		&-slider
+			&__slide
+				div
+					img
+						max-width: 140px
+	.cart
+		&-item
+			&__ttl
+				font-size: 42px
 
 //Medium: ≥992px max-width: 1199px
 +media-breakpoint-down(md)
+	.nav
+		&-phone
+			padding: 10px 5px
+	.head
+		margin-top: -50px
+		&:before
+			display: none
+	.clients
+		&-slider
+			&__slide
+				div
+					img
+						max-width: 115px
+	.gallery
+		&:before
+			width: 150px
+			height: 260px
+			background-size: cover
+	.head-jbi
+		margin-top: -50px
+	.jbi
+		&-item
+			&__img
+				width: 220px
+				height: 220px
+				img
+					max-width: 200px
+			&__btn
+				padding: 10px 15px
+	.park
+		&-item
+			&__img
+				width: 220px
+				&_2
+					background-position-x: -20px
+				img
+					max-width: 200px
+	.steel
+		margin-top: -50px
+	.catalog
+		&-item
+			&__img
+				width: 220px
+				height: 220px
+				img
+					max-width: 200px
+	.calc
+		&-form
+			&__btn
+				float: none
 
 //Small: ≥768px max-width: 991px
 +media-breakpoint-down(sm)
+	.nav
+		&-list
+			&__item
+				margin-right: 10px
+	.mt80
+		margin-top: -80px
+	.head
+		margin-top: 0
+		&-img
+			margin: 0 auto
+		&-ttl
+			text-align: center
+			&:before
+				left: 50%
+				margin-left: -145px
+		&-subttl
+			text-align: center
+	.directions
+		&-item
+			&__ttl
+				font-size: 14px
+	.opportunities
+		&-img
+			margin: 20px auto
+		&-items
+			&__txt
+				text-align: center
+				margin-bottom: 40px
+				&.last
+					margin-bottom: 0
+			&__dots
+				display: none
+			&__margin
+				margin-top: 0
+	.portfolio
+		&-item
+			&__img
+				margin-bottom: 20px
+	.about
+		&-ttl
+			display: table
+			margin: 0 auto 20px
+			overflow: visible
+		&-btn
+			margin: 0 auto 20px
+		&-video
+			margin-bottom: 20px
+	.map
+		margin-top: 20px
+	.foot
+		.w-100
+			margin-bottom: 20px
+	.head-jbi
+		&:before
+			display: none
+		min-height: inherit
+		margin-top: 0
+	.jbi
+		&-item
+			max-width: 220px
+			display: table
+			margin: 0 auto 40px
+	.individ
+		&-img
+			margin: 0 auto 20px
+	.avtopark
+		&:before
+			display: none
+		min-height: inherit
+		margin-top: 0
+		.row
+			min-height: inherit
+	.park
+		&-item
+			max-width: 220px
+			display: table
+			margin: 0 auto 40px
+	.steel
+		&:before
+			display: none
+		min-height: inherit
+		margin-top: 0
+		.row
+			min-height: inherit
+	.xs-bg
+		margin: -110px auto 30px
+		&_avtopark
+			margin: 0 auto 30px
+	.catalog
+		margin-top: 0
+		padding: 60px 0 20px
+		&-item
+			max-width: 220px
+			display: table
+			margin: 0 auto 40px
+	.cart
+		&-item
+			&__img
+				margin: 0 auto
+				&:after
+					display: none
+		&-btn
+			a
+				margin: 0 auto 20px
+	.calc
+		&-form
+			&__btn
+				margin: 0 auto 80px
+
 
 //Extra small: ≥576px max-width: 767px
 +media-breakpoint-down(xs)
+	.mob-mnu
+		width: 100%
+		height: 0
+		overflow: hidden
+		position: fixed
+		background-color: rgba(#000, .9)
+		z-index: 10
+		transition: all ease .3s
+		&.show
+			height: 100vh
+			padding: 60px 20px
+			transition: all ease .3s
+		&__link
+			cursor: pointer
+			float: right
+			span
+				display: inline-block
+				font-size: 14px
+			img
+				display: inline-block
+		&__close
+			img
+				margin: 0 auto
+		&__center
+			display: flex
+			min-height: calc(100vh - 24px - 40px - 120px)
+		&__content
+			margin: auto
+		&-list
+			list-style-type: none
+			padding-left: 0
+			margin-bottom: 0
+			&__item
+				padding: 10px 0
+				border-bottom: 1px solid #e4e4e4
+				text-align: center
+				&:last-child
+					border-bottom: none
+				a
+					font-family: $title
+					color: #fff
+					&.active
+						font-family: $title-m
+		&-phone
+			display: table
+			float: left
+			background: linear-gradient(180deg, #F6D365 0%, #FFAF14 100%)
+			padding: 10px 20px
+			font-family: $text-b
+			color: #fff
+			border-radius: 25px
+			transition: all ease .3s
+			&:hover
+				color: #fff
+				background: linear-gradient(180deg, $accent 0%, $accent 100%)
+				transition: all ease .3s
+		&-lang
+			display: table
+			float: right
+			background: linear-gradient(180deg, #4D6A71 0%, #3A454A 100%), #C4C4C4
+			padding: 4px
+			border-radius: 30px 30px
+			&__link
+				display: inline-block
+				min-height: 38px
+				min-width: 38px
+				line-height: 38px
+				text-align: center
+				color: #fff
+				&.active
+					color: #000
+					border-radius: 50% 50%
+					background-color: #E2ECF5
+					&:hover
+						color: #000
+				&:hover
+					color: #fff
+	.nav
+		padding-top: 10px
+		&-logo
+			max-width: 75px
+			margin: 0
+		&-list
+			&:after
+				display: none
+	.mt80
+		margin-top: 0
+	.directions
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+		&-img
+			max-width: 375px
+			margin: 0 auto 20px
+		&-item
+			&__ttl
+				display: table
+				margin: 0 auto
+				span
+					text-align: center
+				&:before
+					left: 50%
+					margin-left: -42px
+			&__btn
+				margin: 0 auto 40px
+				&.last
+					margin-bottom: 0
+	.opportunities
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+	.portfolio
+		&-ttl
+			&__name
+				float: none
+				font-size: 20px
+			&__note
+				float: none
+				font-size: 20px
+	.clients
+		&-slider
+			&__slide
+				div
+					img
+						max-width: 100px
+	.gallery
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+		&:before
+			display: none
+	.about
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+	.clients
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+	.contacts
+		&-ttl
+			&__name
+				font-size: 20px
+			&__note
+				font-size: 20px
+	.jbi, .park, .catalog
+		&-slider, &-slider_xs
+			div
+				outline: none
+			.slick-arrow
+				z-index: 2
+				cursor: pointer
+				position: absolute
+				top: 50%
+				width: 50px
+				height: 50px
+				margin-top: -25px
+				background-color: #FFD57C
+				border-radius: 50% 50%
+				font-size: 0
+				transition: all ease .3s
+				&:hover
+					background-color: #FCB51E
+					transition: all ease .3s
+				&:after
+					content: ''
+					width: 30px
+					height: 30px
+					background-position: center
+					background-size: 30px 30px
+					background-repeat: no-repeat
+					position: absolute
+					top: 10px
+					transition: all ease .3s
+				&.slick-prev
+					left: 0
+					&:after
+						left: 10px
+						background-image: url(../img/arr_left.svg)
+					&:hover
+						&:after
+							transition: all ease .3s
+							left: -20px
+				&.slick-next
+					right: 0
+					&:after
+						right: 10px
+						background-image: url(../img/arr_right.svg)
+					&:hover
+						&:after
+							transition: all ease .3s
+							right: -20px
+	.modal
+		min-width: inherit
+	.cart-item
+		&__ttl
+			font-size: 36px
+		&__price
+			margin-bottom: 20px
+		&-txt
+			margin-top: 20px
 
 //Extra small: >0 max-width: 575px
 +media-breakpoint-down(xxs)
+	.nav
+		&-list
+			margin: 0
+			&__item
+				display: block
+	.mt80
+		margin-top: 20px
+	.head
+		&-ttl
+			font-size: 28px
+	.directions
+		&-ttl
+			&__name
+				float: none
+			&__note
+				float: none
+	.opportunities
+		&-ttl
+			&__name
+				float: none
+			&__note
+				float: none
+	.gallery
+		&-ttl
+			&__name
+				float: none
+			&__note
+				float: none
+		&-slider
+			&__dots
+				ul
+					li
+						width: 30px
+	.about
+		&-ttl
+			display: block
+			&__name
+				float: none
+			&__note
+				float: none
+	.clients
+		&-ttl
+			&__name
+				float: none
+			&__note
+				float: none
+	.contacts
+		&-ttl
+			&__name
+				float: none
+			&__note
+				float: none
+	.modal, .calc
+		&-form
+			.rline
+				p
+					display: block
+	.steel, .avtopark, .head-jbi
+		&-ttl
+			font-size: 20px
+	.calc
+		&:before
+			display: none
+		&-note
+			font-size: 24px
+		&-form
+			&__btn
+				margin-bottom: 0
 
-
-/*==========  Mobile First  ==========*/
-
-//Extra small: <576px
-+media-breakpoint-up(xs)
-
-//Small: ≤576px
-+media-breakpoint-up(sm)
-
-//Medium: ≤768px
-+media-breakpoint-up(md)
-
-//Large: ≤992px
-+media-breakpoint-up(lg)
-
-//Extra large: ≤1200px
-+media-breakpoint-up(xl)
