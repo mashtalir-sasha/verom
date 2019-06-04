@@ -17,21 +17,31 @@ $(function() {
 		$('.mob-mnu').removeClass('show');
 	});
 
+	$('.park-item__btn, .service-item__btn, .cart-item__btn').click(function () {
+		var subttl = $(this).data('item');
+		$('.subttl').val(subttl);
+	});
+
 	// Отправка формы
 	$('form').submit(function() {
-		var data = $(this).serialize();
-		var goalId = $(this).find('input[ name="goal"]').val();
-		data += '&ajax-request=true';
+		var form = $(this);
+		var data = new FormData(form[0]);
+		var good = $(this).data('good');
+		var link = $(this).data('link');
 		$.ajax({
 			type: 'POST',
-			url: 'mail.php',
-			dataType: 'json',
+			url: '/mail.php',
 			data: data,
+			contentType: false,
+			processData: false,
 			success: (function() {
 				$.fancybox.close();
-				$.fancybox.open('<div class="thn"><h3>Заявка отправлена!</h3><p>С Вами свяжутся в ближайшее время.</p></div>');
-				//gtag('event','submit',{'event_category':'submit','event_action':goalId});
-				//fbq('track', 'Lead');
+				if (good == true) {
+					window.open(link, "_blank");
+					$.fancybox.open('<div class="thn"><h3>Заявка отправлена!</h3><p>С Вами свяжутся в ближайшее время.</p></div>');
+				} else {
+					$.fancybox.open('<div class="thn"><h3>Заявка отправлена!</h3><p>С Вами свяжутся в ближайшее время.</p></div>');
+				}
 			})()
 		});
 		return false;
@@ -115,9 +125,9 @@ $(function() {
 		var block = $(this);
 		$(window).scroll(function() {
 			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-				var top = block.offset().top-50;
+				var top = block.offset().top-400;
 			} else {
-				var top = block.offset().top+50;
+				var top = block.offset().top+400;
 			}
 			var bottom = block.height()+top;
 			top = top - $(window).height();
